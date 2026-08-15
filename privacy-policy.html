@@ -3,161 +3,1161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Living Manna — Privacy Policy</title>
-  <meta name="description" content="Privacy policy for Living Manna, a bilingual offline Bible reading app for Android." />
+  <title>Privacy Policy — Living Manna</title>
+  <meta name="description" content="Official Privacy Policy for Living Manna — a bilingual offline Bible reading app for iOS and Android. Zero tracking, zero ads, 100% on-device data." />
+  <link rel="canonical" href="privacy-policy.html" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Living Manna — Privacy Policy" />
+  <meta property="og:description" content="100% on-device offline Bible reading. Zero personal data collected, zero ads, zero telemetry." />
+  <meta property="og:type" content="website" />
+
   <style>
     :root {
-      --ink: #1f1b16;
-      --muted: #6b6258;
-      --accent: #b08440;
-      --rule: #e9e2d6;
-      --bg: #fbf7ef;
-      --panel: #ffffff;
+      /* Light Mode Palette (Apple System Inspired) */
+      --color-scheme: light;
+      --bg-base: #f5f5f7;
+      --bg-surface: #ffffff;
+      --bg-surface-secondary: #fbfbfd;
+      --bg-card-subtle: #f8f8fa;
+      --bg-nav: rgba(255, 255, 255, 0.82);
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.14);
+      --text-primary: #1d1d1f;
+      --text-secondary: #515154;
+      --text-tertiary: #86868b;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --accent-subtle: rgba(0, 113, 227, 0.08);
+      --accent-gold: #b08440;
+      --accent-gold-subtle: rgba(176, 132, 64, 0.12);
+      --success-badge-bg: rgba(52, 199, 89, 0.12);
+      --success-badge-text: #1a7e36;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-scheme: dark;
+        --bg-base: #000000;
+        --bg-surface: #1c1c1e;
+        --bg-surface-secondary: #2c2c2e;
+        --bg-card-subtle: #242426;
+        --bg-nav: rgba(28, 28, 30, 0.82);
+        --border-subtle: rgba(255, 255, 255, 0.12);
+        --border-strong: rgba(255, 255, 255, 0.22);
+        --text-primary: #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --text-tertiary: #6e6e73;
+        --accent: #2997ff;
+        --accent-hover: #47a4ff;
+        --accent-subtle: rgba(41, 151, 255, 0.15);
+        --accent-gold: #d4a359;
+        --accent-gold-subtle: rgba(212, 163, 89, 0.2);
+        --success-badge-bg: rgba(48, 209, 88, 0.18);
+        --success-badge-text: #30d158;
+        --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        --card-shadow-hover: 0 10px 36px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 0;
     }
-    main {
-      max-width: 720px;
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+      color-scheme: light dark;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      font-size: 17px;
+      line-height: 1.62;
+      letter-spacing: -0.011em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation Bar (Apple Frosted Glass) */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-nav);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 56px 24px 96px;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    header { margin-bottom: 40px; }
-    h1 {
-      font: 700 32px/1.2 Georgia, "Times New Roman", serif;
-      letter-spacing: -0.01em;
-      margin: 0 0 8px;
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -0.015em;
     }
-    .sub { color: var(--muted); font-size: 14px; margin: 0; }
-    .effective { color: var(--muted); font-size: 13px; margin-top: 16px; }
-    h2 {
-      font: 700 20px/1.3 Georgia, "Times New Roman", serif;
-      margin: 40px 0 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--rule);
+
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, #b08440 0%, #d4a359 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(176, 132, 64, 0.3);
+      flex-shrink: 0;
     }
-    h3 { font-size: 16px; margin: 24px 0 8px; }
-    p, li { margin: 0 0 12px; }
-    ul, ol { padding-left: 22px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a.active {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Page Layout */
+    .page-wrapper {
+      flex: 1;
+      max-width: 820px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Hero Section */
+    .hero-header {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 5vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      line-height: 1.48;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
+
+    .meta-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .badge-success {
+      background: var(--success-badge-bg);
+      color: var(--success-badge-text);
+    }
+
+    .badge-outline {
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      background: var(--bg-surface);
+    }
+
+    /* Nutrition Labels (Privacy at a Glance Grid) */
+    .privacy-nutrition-section {
+      margin: 36px 0 48px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+    }
+
+    .nutrition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .nutrition-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nutrition-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .nutrition-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .nutrition-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .nutrition-icon.gold {
+      background: var(--accent-gold-subtle);
+      color: var(--accent-gold);
+    }
+
+    .nutrition-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .nutrition-status {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .nutrition-status.green {
+      color: var(--success-badge-text);
+    }
+
+    .nutrition-desc {
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      margin-top: auto;
+    }
+
+    /* Content Cards & Sections */
+    .policy-content {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .policy-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title-num {
+      color: var(--accent-gold);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .policy-section p {
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section p strong,
+    .policy-section li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* App Identification Table */
+    .id-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .id-table th,
+    .id-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .id-table th {
+      color: var(--text-tertiary);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--bg-card-subtle);
+    }
+
+    .id-table tr:first-child th:first-child {
+      border-top-left-radius: var(--radius-sm);
+    }
+
+    .id-table tr:first-child th:last-child {
+      border-top-right-radius: var(--radius-sm);
+    }
+
+    .id-table td {
+      color: var(--text-secondary);
+    }
+
+    .id-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .id-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Styled Feature Lists */
+    .feature-list {
+      list-style: none;
+      margin: 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .feature-item-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-item-icon.danger {
+      color: #ff3b30;
+      background: rgba(255, 59, 48, 0.1);
+      border-color: rgba(255, 59, 48, 0.2);
+    }
+
+    .feature-item-icon.check {
+      color: var(--success-badge-text);
+      background: var(--success-badge-bg);
+      border-color: transparent;
+    }
+
+    /* Code Snippets */
     code {
-      background: var(--panel);
-      border: 1px solid var(--rule);
-      padding: 1px 6px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    /* Translation Copyright Cards */
+    .translation-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .trans-card {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+
+    .trans-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .trans-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
       border-radius: 4px;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .trans-badge.pd {
+      background: var(--success-badge-bg);
+      color: var(--success-badge-text);
+    }
+
+    .trans-card p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Callout Box */
+    .callout {
+      background: var(--accent-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 18px;
+      margin: 16px 0;
+      font-size: 14.5px;
+      color: var(--text-primary);
+    }
+
+    .callout strong {
+      color: var(--accent);
+    }
+
+    /* Contact Box */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 14px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-email {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #ffffff !important;
+      border-radius: var(--radius-full);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none !important;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-contact:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      margin-top: auto;
+      padding: 40px 24px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .footer-container {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
       font-size: 13px;
     }
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 18px 22px;
-      margin: 18px 0;
+
+    .footer-links a:hover {
+      color: var(--accent);
     }
-    .panel strong { color: var(--accent); }
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: 13px;
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      line-height: 1.5;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding: 32px 16px 64px;
+      }
+
+      .policy-section {
+        padding: 22px 18px;
+        border-radius: var(--radius-md);
+      }
+
+      .hero-title {
+        font-size: 30px;
+      }
+
+      .hero-sub {
+        font-size: 17px;
+      }
+
+      .nutrition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .id-table th,
+      .id-table td {
+        padding: 10px 8px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Privacy Policy</h1>
-      <p class="sub">Living Manna — a bilingual offline Bible reading app</p>
-      <p class="effective">Effective date: 7 May 2026</p>
-    </header>
 
-    <div class="panel">
-      <p><strong>Plain-English summary.</strong> Living Manna does not collect, transmit, sell, or share any personal data. The app runs entirely on your device. There are no analytics, no advertising, no third-party SDKs that report usage, and no servers we operate that receive information about you.</p>
+  <!-- Sticky Top Navigation -->
+  <nav class="site-nav" aria-label="Global Navigation">
+    <div class="nav-container">
+      <a href="privacy-policy.html" class="brand-link" aria-label="Living Manna Home">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <span>Living Manna</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="privacy-policy.html" class="active" aria-current="page">Privacy Policy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <h2>1. Who we are</h2>
-    <p>Living Manna ("the app") is developed and maintained by an independent developer ("we", "us"). The app is distributed through Google Play under the package name <code>com.livingmanna.livingmanna</code>. You can contact us at <a href="mailto:tesfayegirma360@gmail.com">tesfayegirma360@gmail.com</a> for any privacy question.</p>
+  <!-- Main Content -->
+  <div class="page-wrapper">
+    <main>
+      <!-- Hero Header -->
+      <header class="hero-header">
+        <div class="hero-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Privacy &amp; Data Transparency
+        </div>
+        <h1 class="hero-title">Privacy Policy</h1>
+        <p class="hero-sub">
+          Living Manna is built with privacy by design. We believe Scripture study is personal and sacred. The app operates 100% on your device with zero tracking, zero analytics, and zero advertising.
+        </p>
+        <div class="meta-badge-row">
+          <span class="badge badge-success">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Zero Tracking Architecture
+          </span>
+          <span class="badge badge-outline">Effective Date: August 15, 2026</span>
+          <span class="badge badge-outline">iOS &amp; Android</span>
+        </div>
+      </header>
 
-    <h2>2. Information we do not collect</h2>
-    <p>We want to be specific because "we don't collect anything" is easy to claim and hard to verify. The app contains no code that performs any of the following:</p>
-    <ul>
-      <li>No account creation or login. The app does not have user accounts.</li>
-      <li>No analytics SDKs (no Firebase Analytics, no Crashlytics, no Mixpanel, no Amplitude, no Sentry, no telemetry of any kind).</li>
-      <li>No advertising SDKs and no advertising identifiers (no AdMob, no Meta Audience Network).</li>
-      <li>No location collection. The app never requests location permission.</li>
-      <li>No contacts, calendar, microphone, camera, SMS, call log, health, or biometric access.</li>
-      <li>No device identifiers (no Android ID, IMEI, MAC, or advertising ID is read or transmitted).</li>
-      <li>No crash reporting service. If the app crashes, the report stays with the operating system; we never see it.</li>
-      <li>No background network activity initiated by the app.</li>
-    </ul>
+      <!-- Privacy Nutrition Labels (Apple Style) -->
+      <section class="privacy-nutrition-section" aria-labelledby="nutrition-heading">
+        <div class="section-label" id="nutrition-heading">Privacy at a Glance (App Store Nutrition Labels)</div>
+        <div class="nutrition-grid">
+          <div class="nutrition-card">
+            <div class="nutrition-card-header">
+              <div class="nutrition-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="nutrition-title">Data Used to Track You</div>
+            </div>
+            <div class="nutrition-status green">None</div>
+            <div class="nutrition-desc">
+              No data collected is linked or used to track you across apps, websites, or ad networks.
+            </div>
+          </div>
 
-    <h2>3. Information stored on your device</h2>
-    <p>To make the app work, the following information is stored locally on your device using Android's standard preferences storage. None of it leaves your device unless you explicitly export it (see "Export and sharing" below).</p>
-    <ul>
-      <li>Reading progress (last book/chapter/verse you opened).</li>
-      <li>Bookmarks, highlights, and personal notes you create on verses.</li>
-      <li>Reading history and reading-plan progress.</li>
-      <li>Reading-time statistics.</li>
-      <li>Your interface preferences: language, theme, font size, haptics, and reminder time.</li>
-      <li>Your enrolled reading plans.</li>
-    </ul>
-    <p>You can clear all of this at any time by uninstalling the app, or by clearing the app's data from your device's Settings → Apps → Living Manna → Storage.</p>
+          <div class="nutrition-card">
+            <div class="nutrition-card-header">
+              <div class="nutrition-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <line x1="18" y1="8" x2="23" y2="13"></line>
+                  <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg>
+              </div>
+              <div class="nutrition-title">Data Linked to You</div>
+            </div>
+            <div class="nutrition-status green">None</div>
+            <div class="nutrition-desc">
+              No personal identification, email, phone number, account, or telemetry identifier is collected.
+            </div>
+          </div>
 
-    <h2>4. Permissions the app requests</h2>
-    <p>Each Android permission the app asks for is used only for the feature it is named for. Most are optional — declining them disables only that feature, not the rest of the app.</p>
+          <div class="nutrition-card">
+            <div class="nutrition-card-header">
+              <div class="nutrition-icon gold" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="nutrition-title">Data Storage</div>
+            </div>
+            <div class="nutrition-status">100% Local</div>
+            <div class="nutrition-desc">
+              All reading history, highlights, notes, and reading plans reside strictly in your local device sandbox.
+            </div>
+          </div>
 
-    <h3>Notifications (POST_NOTIFICATIONS, on Android 13+)</h3>
-    <p>Used only to deliver the daily verse reminder and reading-plan reminders that you opt into. Notifications are generated locally on your device. There is no push channel and no remote messaging.</p>
+          <div class="nutrition-card">
+            <div class="nutrition-card-header">
+              <div class="nutrition-icon gold" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                  <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+                  <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+                  <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+                  <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+              </div>
+              <div class="nutrition-title">Network Activity</div>
+            </div>
+            <div class="nutrition-status">Offline-First</div>
+            <div class="nutrition-desc">
+              All Bible translations and audio assets are bundled locally. No servers to log your reading habits.
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <h3>Schedule exact alarms (SCHEDULE_EXACT_ALARM, on Android 12+)</h3>
-    <p>Used to fire your daily reminder at the exact minute you choose, even when the device is in battery-saver or Doze mode. If you do not grant this permission, reminders still fire but may be delayed by the operating system.</p>
+      <!-- Legal Policy Sections -->
+      <div class="policy-content">
 
-    <h3>Run on device boot (RECEIVE_BOOT_COMPLETED)</h3>
-    <p>Used to re-register your scheduled reminders after the device restarts so you do not miss them. The app does nothing else at boot.</p>
+        <!-- 1. Identity & Store Identifiers -->
+        <section class="policy-section" id="identity">
+          <h2 class="section-title">
+            <span class="section-title-num">1.</span>
+            Who We Are &amp; Application Identity
+          </h2>
+          <p>
+            Living Manna ("the app", "we", "us", "our") is an independent, non-commercial bilingual Bible reading application designed for offline study in English and Amharic.
+          </p>
+          <p>
+            This privacy policy applies to official distributions of Living Manna across mobile platforms:
+          </p>
+          <table class="id-table" aria-label="Application Identification Details">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Store / Distribution</th>
+                <th>Package / Bundle Identifier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>iOS / iPadOS</td>
+                <td>Apple App Store</td>
+                <td><code>com.livingmanna.livingManna</code></td>
+              </tr>
+              <tr>
+                <td>Android</td>
+                <td>Google Play Store</td>
+                <td><code>com.livingmanna.livingmanna</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            For any privacy inquiries or technical questions regarding this policy, contact us directly at <a href="mailto:tesfayegirma360@gmail.com">tesfayegirma360@gmail.com</a>.
+          </p>
+        </section>
 
-    <h3>Wake lock (WAKE_LOCK)</h3>
-    <p>Used briefly when a scheduled reminder fires so the device is awake long enough to display the notification.</p>
+        <!-- 2. Information We Do Not Collect -->
+        <section class="policy-section" id="no-collection">
+          <h2 class="section-title">
+            <span class="section-title-num">2.</span>
+            Information We Do Not Collect
+          </h2>
+          <p>
+            We believe that true privacy begins with data minimization. Living Manna is engineered without any code paths or mechanisms to collect or transmit your personal information. Specifically:
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-item-icon danger" aria-hidden="true">✕</span>
+              <div><strong>No User Accounts or Authentication:</strong> You do not need to sign up, sign in, or provide an email, username, phone number, or password.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon danger" aria-hidden="true">✕</span>
+              <div><strong>No Analytics or Telemetry SDKs:</strong> We do not include Google Analytics for Firebase, Firebase Crashlytics, Mixpanel, Amplitude, Sentry, Segment, or any custom telemetry tracking code.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon danger" aria-hidden="true">✕</span>
+              <div><strong>No Advertising SDKs:</strong> We do not display advertisements, embed Google AdMob, Unity Ads, Meta Audience Network, or any programmatic ad frameworks.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon danger" aria-hidden="true">✕</span>
+              <div><strong>No Tracking Identifiers:</strong> The app never requests Apple's Identifier for Advertisers (IDFA), Google Advertising ID (GAID), Android ID, IMEI, or hardware MAC addresses.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon danger" aria-hidden="true">✕</span>
+              <div><strong>No Location or Biometric Data:</strong> The app never accesses GPS, cellular geolocation, Wi-Fi SSIDs, Apple Touch ID / Face ID data, or biometric sensors.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon danger" aria-hidden="true">✕</span>
+              <div><strong>No Background Network Activity:</strong> The app operates offline and does not connect to remote servers in the background to log your Bible reading activity or app usage.</div>
+            </li>
+          </ul>
+        </section>
 
-    <h3>Photos / media (READ_MEDIA_IMAGES on Android 13+; legacy READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE on older versions)</h3>
-    <p>Used only when you choose a photo to use as a verse-card background, or when you save a verse-card image to your gallery. The app reads the file you pick and writes the file you save; it does not browse, index, or upload any other files.</p>
+        <!-- 3. Information Stored On Your Device -->
+        <section class="policy-section" id="local-storage">
+          <h2 class="section-title">
+            <span class="section-title-num">3.</span>
+            Information Stored On Your Device
+          </h2>
+          <p>
+            To deliver a rich, personalized Bible study experience, Living Manna stores data locally inside the secure sandbox environment provided by your operating system (iOS Sandboxed Storage and Android App Sandboxed Storage).
+          </p>
+          <p>This strictly local data includes:</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">✓</span>
+              <div><strong>Reading Progress &amp; History:</strong> The last book, chapter, and verse you viewed, plus recent reading history for rapid resume.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">✓</span>
+              <div><strong>Annotations &amp; Personal Notes:</strong> Verse bookmarks, highlights (with custom color tags), and personal study notes created by you.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">✓</span>
+              <div><strong>Reading Plans &amp; Streaks:</strong> Enrolled Scripture reading plans, completed milestones, and calculated streak counts.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">✓</span>
+              <div><strong>Reading Statistics:</strong> Aggregated on-device reading metrics (e.g., minutes spent reading, chapters completed).</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">✓</span>
+              <div><strong>User Preferences:</strong> Interface language, theme selection (System / Light / Dark), typography size, line spacing, parallel reading layout, and reminder times.</div>
+            </li>
+          </ul>
+          <div class="callout">
+            <strong>100% User Control:</strong> You can completely erase all locally stored data at any time by uninstalling the app, or via your operating system settings (e.g., Android Settings → Apps → Living Manna → Clear Data, or iOS Settings → iPhone Storage → Delete App).
+          </div>
+        </section>
 
-    <h2>5. Export and sharing — initiated by you</h2>
-    <p>Two features in the app produce data that may leave your device, and both are triggered explicitly by you:</p>
-    <ul>
-      <li><strong>Backup &amp; restore.</strong> Settings → Backup writes a JSON file containing your bookmarks, notes, history, plans, and preferences, then opens the system share sheet. You choose where it goes (Drive, Files, email, etc.). The app sends nothing automatically and never to a destination we control.</li>
-      <li><strong>Verse sharing.</strong> Tapping share on a verse opens the system share sheet (or a deep link to Telegram, WhatsApp, or Facebook share dialogs). The verse text and reference are passed to the destination of your choice. We do not receive a copy.</li>
-    </ul>
-    <p>Once you hand data to another app or service via the share sheet, that app's privacy policy governs what happens next.</p>
+        <!-- 4. Device Permissions -->
+        <section class="policy-section" id="permissions">
+          <h2 class="section-title">
+            <span class="section-title-num">4.</span>
+            Device Permissions &amp; Hardware Access
+          </h2>
+          <p>
+            When Living Manna requests device permissions, each permission is strictly dedicated to enabling a specific user-requested feature. All processing occurs locally:
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">🔔</span>
+              <div>
+                <strong>Notifications (iOS UserNotifications &amp; Android <code>POST_NOTIFICATIONS</code>):</strong>
+                Used exclusively to deliver opt-in daily verse reminders and reading plan alerts. All notification scheduling is handled locally on the device OS scheduler. There is no remote push notification server.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">⏰</span>
+              <div>
+                <strong>Exact Alarms &amp; Boot Receiver (Android <code>SCHEDULE_EXACT_ALARM</code> &amp; <code>RECEIVE_BOOT_COMPLETED</code>):</strong>
+                Allows your chosen reminder times to fire punctually even in low-power or Doze modes, and re-registers your local schedule upon device restart.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">🖼️</span>
+              <div>
+                <strong>Photo Library &amp; Media Storage (iOS Photo Access &amp; Android <code>READ_MEDIA_IMAGES</code>):</strong>
+                Used only when you explicitly create and save a verse-card image to your photo gallery, or choose a custom background wallpaper image from your library. The app accesses only the specific photo selected.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">⚡</span>
+              <div>
+                <strong>Wake Lock (Android <code>WAKE_LOCK</code>):</strong>
+                Briefly ensures the CPU is active during the exact moment a local alarm triggers so the notification can be generated cleanly.
+              </div>
+            </li>
+          </ul>
+        </section>
 
-    <h2>6. Children</h2>
-    <p>The app is appropriate for all ages and does not knowingly collect any information from anyone, regardless of age. There is no account and no profile to create.</p>
+        <!-- 5. Data Export & Sharing -->
+        <section class="policy-section" id="export-sharing">
+          <h2 class="section-title">
+            <span class="section-title-num">5.</span>
+            Data Export &amp; User-Initiated Sharing
+          </h2>
+          <p>
+            Your data belongs to you. Living Manna provides manual export and sharing capabilities that are strictly triggered by your deliberate actions:
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">💾</span>
+              <div>
+                <strong>Backup &amp; Restore (JSON Export):</strong>
+                Under Settings → Backup, you can generate an unencrypted, human-readable JSON backup containing your bookmarks, notes, reading history, and preferences. The app triggers the native OS Share Sheet (AirDrop, Files, Google Drive, email) so you can store it wherever you choose.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">📤</span>
+              <div>
+                <strong>Verse &amp; Card Sharing:</strong>
+                When you choose to share a verse or generated wallpaper image, the app passes the content directly to the native system share dialog (or deep link to WhatsApp, Telegram, etc.). We never receive a copy or record of what you shared or whom you shared it with.
+              </div>
+            </li>
+          </ul>
+          <p>
+            <em>Please note: Once data is shared outside of Living Manna via the OS Share Sheet, the privacy practices of the recipient service or application will govern that data.</em>
+          </p>
+        </section>
 
-    <h2>7. Bible translation copyrights</h2>
-    <p>The app includes Bible translations whose text is the property of their respective rights holders. Each translation's copyright notice is shown inside the app under Settings → About → Translations. Distribution rights for licensed translations are obtained from the publishers; the app does not modify the translation text.</p>
+        <!-- 6. Bible Translation Copyrights -->
+        <section class="policy-section" id="copyrights">
+          <h2 class="section-title">
+            <span class="section-title-num">6.</span>
+            Bible Translation Copyrights &amp; Intellectual Property
+          </h2>
+          <p>
+            Living Manna bundles selected Scripture translations to enable full offline bilingual reading. The text of each translation remains the intellectual property of its respective copyright holder:
+          </p>
 
-    <h2>8. Data deletion</h2>
-    <p>Because the app stores everything locally and does not have user accounts, the simplest way to delete all data is to uninstall the app or clear its storage from your device's Settings. Since we never receive your data, there is nothing for us to delete on a server.</p>
-    <p>If you have any further deletion request — for example, regarding a backup file you previously emailed us — write to <a href="mailto:tesfayegirma360@gmail.com">tesfayegirma360@gmail.com</a> and we will respond within 30 days.</p>
+          <div class="translation-cards">
+            <div class="trans-card">
+              <div class="trans-card-title">
+                <span>King James Version (KJV)</span>
+                <span class="trans-badge pd">Public Domain</span>
+              </div>
+              <p>
+                The King James Version of the Holy Bible is in the public domain in most jurisdictions worldwide.
+              </p>
+            </div>
 
-    <h2>9. Security</h2>
-    <p>App data is stored using Android's standard application sandbox, which isolates it from other apps. Backup files you export are written in plain JSON because portability and inspectability matter for a backup; treat the exported file as you would any other personal file when choosing where to send it.</p>
+            <div class="trans-card">
+              <div class="trans-card-title">
+                <span>Amharic 1954 (የድሮ ትርጉም / Old Version)</span>
+                <span class="trans-badge">Licensed</span>
+              </div>
+              <p>
+                Copyright &copy; Bible Society of Ethiopia (<a href="https://www.biblesociety.et" target="_blank" rel="noopener noreferrer">biblesociety.et</a>). Used for non-commercial Scripture reading and ministry.
+              </p>
+            </div>
 
-    <h2>10. Changes to this policy</h2>
-    <p>If the app changes in a way that affects this policy — for example, if a future version adds an opt-in feature that involves any kind of network call — this page will be updated and the effective date at the top will change. Material changes will also be highlighted inside the app.</p>
+            <div class="trans-card">
+              <div class="trans-card-title">
+                <span>Easy-to-Read Version™ (ERV)</span>
+                <span class="trans-badge">Licensed</span>
+              </div>
+              <p>
+                Copyright &copy; 2006 Bible League International (<a href="https://www.bibleleague.org" target="_blank" rel="noopener noreferrer">bibleleague.org</a>). All rights reserved.
+              </p>
+            </div>
 
-    <h2>11. Contact</h2>
-    <p>Email: <a href="mailto:tesfayegirma360@gmail.com">tesfayegirma360@gmail.com</a><br />
-    Subject line: <em>Living Manna — privacy</em></p>
+            <div class="trans-card">
+              <div class="trans-card-title">
+                <span>New Amharic Standard Version™ (NASV / አማ01)</span>
+                <span class="trans-badge">Licensed</span>
+              </div>
+              <p>
+                Copyright &copy; 2001, 2024 Biblica, Inc. (<a href="https://www.biblica.com" target="_blank" rel="noopener noreferrer">biblica.com</a>). Used with permission. All rights reserved worldwide.
+              </p>
+            </div>
+          </div>
 
-    <footer>
-      <p>This policy applies to the Living Manna Android application distributed via Google Play. It does not cover any third-party app to which you choose to share content from inside Living Manna.</p>
-    </footer>
-  </main>
+          <p>
+            All translation texts are displayed unmodified as provided by the respective copyright holders.
+          </p>
+        </section>
+
+        <!-- 7. Children's Privacy -->
+        <section class="policy-section" id="children">
+          <h2 class="section-title">
+            <span class="section-title-num">7.</span>
+            Children's Privacy (COPPA &amp; GDPR-K)
+          </h2>
+          <p>
+            Living Manna is safe for users of all ages, including children. Because the application does not collect, store, transmit, or share any personal information, it is fully compliant with the Children's Online Privacy Protection Act (COPPA) in the United States and the General Data Protection Regulation (GDPR-K) in the European Union.
+          </p>
+          <p>
+            We do not knowingly solicit or collect data from children under the age of 13 (or under 16 in applicable European jurisdictions). If a parent or guardian has questions, please reach out to us at <a href="mailto:tesfayegirma360@gmail.com">tesfayegirma360@gmail.com</a>.
+          </p>
+        </section>
+
+        <!-- 8. Data Retention, Deletion & Security -->
+        <section class="policy-section" id="security-deletion">
+          <h2 class="section-title">
+            <span class="section-title-num">8.</span>
+            Data Retention, Deletion &amp; Security
+          </h2>
+          <p>
+            <strong>Data Retention:</strong> Because we maintain no external servers, databases, or user telemetry, we hold zero records of your data. Your data exists only as long as you keep the app installed on your device or retain an exported JSON backup file.
+          </p>
+          <p>
+            <strong>Data Deletion:</strong> You have absolute authority over your data. To permanently delete all notes, bookmarks, reading progress, and settings:
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">📱</span>
+              <div><strong>On iOS:</strong> Delete Living Manna from your Home Screen or App Library. iOS will immediately remove the app sandbox and all contained files.</div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-item-icon check" aria-hidden="true">🤖</span>
+              <div><strong>On Android:</strong> Navigate to Settings → Apps → Living Manna → Storage → Clear Storage / Clear Data, or uninstall the application.</div>
+            </li>
+          </ul>
+          <p>
+            <strong>Security:</strong> All local databases and preferences are protected by iOS and Android application sandbox barriers, preventing other unauthorized apps from accessing your Living Manna study records.
+          </p>
+        </section>
+
+        <!-- 9. Policy Changes -->
+        <section class="policy-section" id="policy-changes">
+          <h2 class="section-title">
+            <span class="section-title-num">9.</span>
+            Changes to This Privacy Policy
+          </h2>
+          <p>
+            We may occasionally update this Privacy Policy to reflect app improvements, new operating system requirements, or legal standards. When modifications are made, the "Effective Date" at the top of this page will be updated.
+          </p>
+          <p>
+            If any future feature ever requires network communication or alters our zero-data collection guarantee, we will provide prominent in-app disclosure and require explicit user opt-in before activating such functionality.
+          </p>
+        </section>
+
+        <!-- 10. Contact & Inquiries -->
+        <section class="policy-section" id="contact">
+          <h2 class="section-title">
+            <span class="section-title-num">10.</span>
+            Contact &amp; Inquiries
+          </h2>
+          <p>
+            If you have questions, feedback, or concerns regarding this Privacy Policy or Living Manna's data privacy practices, please contact the developer directly:
+          </p>
+          <div class="contact-card">
+            <div class="contact-info">
+              <span class="contact-email">tesfayegirma360@gmail.com</span>
+              <span style="font-size: 13px; color: var(--text-secondary);">Subject line: <em>Living Manna — Privacy Inquiry</em></span>
+            </div>
+            <a href="mailto:tesfayegirma360@gmail.com?subject=Living%20Manna%20%E2%80%94%20Privacy%20Inquiry" class="btn-contact">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Email Developer
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Apple-Style Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div style="font-weight: 600; color: var(--text-primary);">
+          Living Manna
+          <span style="font-weight: 400; color: var(--text-tertiary); margin-left: 6px;">Bilingual Offline Bible</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="mailto:tesfayegirma360@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Living Manna. All rights reserved. Built with privacy and offline reliability first.
+        </div>
+        <div>
+          iOS: <code>com.livingmanna.livingManna</code> &middot; Android: <code>com.livingmanna.livingmanna</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

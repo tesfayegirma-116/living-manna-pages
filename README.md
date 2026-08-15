@@ -1,17 +1,15 @@
-# Living Manna — Pages
+# Living Manna
 
 Static home for **Living Manna**, the offline bilingual Bible app.
 
-No build step. No tracking. Just the pages stores and users need.
+<a href="https://play.google.com/store/apps/details?id=com.livingmanna.livingmanna">
+  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="60" />
+</a>
 
 ## Live
 
 - [Privacy Policy](privacy-policy.html)
 - [Support](support.html)
-
-## Stack
-
-Plain HTML · shared CSS · Inter + Newsreader · app icon from the main repo
 
 ## App
 
